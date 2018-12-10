@@ -102,8 +102,11 @@ public class main {
 		BufferedReader input = new BufferedReader(new InputStreamReader(System.in));
 		
 		try{
-			System.out.println("¿Qué tamaño de secuencia desea reemplazar?");
-			value = new Integer(input.readLine());
+			do {
+				System.out.println("¿Qué tamaño de secuencia desea reemplazar?");
+				value = new Integer(input.readLine());
+			}while((value < 0) || (value > COL));
+			
 		}catch(Exception e) {
 			value = 0;
 		}
