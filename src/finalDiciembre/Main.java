@@ -1,4 +1,4 @@
-package finalDiciembreProgramacionI;
+package finalDiciembre;
 
 
 /*
@@ -9,7 +9,7 @@ package finalDiciembreProgramacionI;
  caracteres espacio (' ') al final de la fila.
  */
 
-public class main {
+public class Main {
 
 	static char[] randomChar = {'A', 'B', 'C', 'D', ' '};
 	
@@ -19,15 +19,13 @@ public class main {
 	
 	public static void loadingMatriz(char[][] matriz) {
 		
-		int randomNumer;
-		
 		for(int i=0; i < ROW; i++) {
 			for(int j=0; j < COL; j++) {
 				
 				if((j == 0) || (j == COL - 1)){
 					matriz[i][j] = ' ';
 				}else {
-				 randomNumer = (int) Math.floor(Math.random() * randomChar.length);
+				 int randomNumer = (int) Math.floor(Math.random() * randomChar.length);
 				 matriz[i][j] = randomChar[randomNumer];
 				}
 			}
@@ -56,6 +54,7 @@ public class main {
 				if(matriz[i][j] != ' '){
 					if(!initsequence) {
 						start = j;
+						finish = j;
 						initsequence = true;
 					}else {
 						finish = j;

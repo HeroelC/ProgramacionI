@@ -1,4 +1,4 @@
-package segundoParcialProgramacionI;
+package segundoParcial;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -12,7 +12,7 @@ con al menos un 1, siendo N un valor entero cargado desde teclado entre 0 y la c
 columnas.
 */
 
-public class main {
+public class Main {
 
 	//CONTANTES
 	final static int COL = 25;
@@ -55,17 +55,20 @@ public class main {
 		int finish = 0;
 
 		for(int i=0; i < FIL; i++){
-			for(int j=0; j < COL; j++) {
+			for(int j=1; j < COL; j++) {
 				
 				if(matriz[i][j] != 0) {
 					if(counter == 0) {
 						start = j;
+						finish = j;
 						counter++;
 					}else {
 						finish = j;
 						counter++;
 					}
 				}else {
+					
+//					System.out.println("START: " + start + " FINISH: " + finish);
 					
 					if(counter == size) {
 						reverseSequense(matriz, i, start, finish);
