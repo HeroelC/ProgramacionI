@@ -5,7 +5,7 @@ import java.io.InputStreamReader;
 
 /*Implementar un método que busque la posición de un valor entero dado en un arreglo ordenado*/
 
-public class Ejercicio2 {
+public class Ejercicio02 {
 
 	static int SIZE = 10;
 	
@@ -40,18 +40,22 @@ public class Ejercicio2 {
 	
 	public static int searchValue(int[] vector, int value) {
 	
+		//VARIABLES
 		int counter = 0;
+		int position = -1;
+		boolean found = false;
 		
-		while(counter < SIZE) {
+		while((counter < SIZE) && (!found)){
 			
 			if(vector[counter]==value) {
-				return counter;
+				position = counter;
+				found = true;
 			}
 			
 			counter++;
 		}
 		
-		return -1;
+		return position;
 	}
 	
 	public static int askValue() {

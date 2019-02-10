@@ -5,7 +5,7 @@ package practico7;
  * aleatorios entre 0 y 100. Finalmente imprima el arreglo por pantalla.
  * */
 
-public class Ejercicio1 {
+public class Ejercicio01 {
 
 	static int SIZE = 10;
 	

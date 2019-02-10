@@ -1,13 +1,16 @@
-package finalDiciembre;
+package finalDiciembre2018;
 
 
 /*
- Realizar un programa que dada una matriz MatSec de caracteres de tamaño MAXFxMAXC con filas
- compuestas de secuencias de caracteres distintos del caracter espacio (' '), elimine todas las
- secuencias que tienen orden ascendente entre sus caracteres. Para ello además deberá tener en
- cuenta que cuando elimina una secuencia debe realizar un corrimiento a izquierda y completar con
- caracteres espacio (' ') al final de la fila.
+ Realizar un programa que dada una matriz MatSec de caracteres de tamaño
+ MAXFxMAXC con filas compuestas de secuencias de caracteres distintos
+ del caracter espacio (' '), elimine todas las secuencias que tienen orden
+ ascendente entre sus caracteres. Para ello además deberá tener en
+ cuenta que cuando elimina una secuencia debe realizar un corrimiento
+  a izquierda y completar con caracteres espacio (' ') al final de la fila.
  */
+
+/*Preguntar lo del corrimiento ¿Desde que lugar? ¿para que?*/
 
 public class Main {
 
@@ -44,31 +47,28 @@ public class Main {
 	
 	public static void searchSequence(char[][] matriz) {
 		
-		boolean initsequence = false;
-		int start = 0;
-		int finish = 0;
+		int start = -1;
+		int finish = -1;
 		
 		for(int i = 0; i < ROW; i++) {
 			for(int j = 1; j < COL; j++) {
 				
 				if(matriz[i][j] != ' '){
-					if(!initsequence) {
+					if(start == -1) {
 						start = j;
 						finish = j;
-						initsequence = true;
 					}else {
 						finish = j;
 					}
 				}else {
-					
-					if(sequenceAsc(matriz, i, start, finish)) {
-						deleteSequence(matriz, i, start, finish);
-					}
-					
+					if(start != -1) {
+						if(sequenceAsc(matriz, i, start, finish)) {
+							deleteSequence(matriz, i, start, finish);
+						}
+					}					
 					//Reseteamos valores
-					initsequence = false;
-					start = 0;
-					finish = 0;
+					start = -1;
+					finish = -1;
 				}
 			}
 		}
@@ -102,11 +102,8 @@ public class Main {
 		char[][] matriz = new char[ROW][COL];
 		
 		loadingMatriz(matriz);
-		
 		printMatriz(matriz);
-		
 		searchSequence(matriz);
-		
 		printMatriz(matriz);
 	}
 

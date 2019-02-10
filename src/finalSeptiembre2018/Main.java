@@ -1,4 +1,4 @@
-package finalSeptiembre;
+package finalSeptiembre2018;
 
 public class Main {
 
@@ -35,7 +35,6 @@ public class Main {
 			}
 		}
 	}
-	
 	//Función para imprimir la matriz
 	public static void printMatriz(int[][] matriz) {
 		
@@ -47,7 +46,6 @@ public class Main {
 			System.out.println();
 		}
 	}
-	
 	//Función para encontrar las secuencias
 	public static void searchSequense(int[][] matriz) {
 		
@@ -111,15 +109,12 @@ public class Main {
 	public static void main(String[] args) {
 		
 		int[][] matriz = new int[ROW][COL];
-		int[] model = new int[SIZE];
-		int[] remplace = new int[SIZE];
+		int[] model = {1, 2, 3};
+		int[] remplace = {7, 8, 9};
 		
 		loadingMatriz(matriz);
-		
 		printMatriz(matriz);
-		
 		searchSequense(matriz);
-		
 	}
 
 }

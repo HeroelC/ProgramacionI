@@ -1,4 +1,4 @@
-package segundoParcial;
+package segundoParcialMayo2018;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -51,8 +51,8 @@ public class Main {
 	public static void searchSequence(int[][] matriz, int size) {
 		
 		int counter = 0;
-		int start = 0;
-		int finish = 0;
+		int start = -1;
+		int finish = -1;
 
 		for(int i=0; i < FIL; i++){
 			for(int j=1; j < COL; j++) {
